@@ -11,15 +11,8 @@ export default function RequestQuote() {
                     ready to assist you with tailored information and quotes
                     that meet your needs.
                 </div>
-                <div className="flex flex-row gap-x-8">
+                <div className="flex flex-row gap-x-8 justify-start">
                     <ContactButton />
-                    <button
-                        className="bg-primary  border-blue-primary text-blue-primary lg:border-2  rounded-2xl 
-            hover:text-primary hover:bg-blue-primary  hover:border-blue-primary 
-            font-semibold  sm:text-md border-1  sm:p-3 p-2 text-sm"
-                    >
-                        Request Quote
-                    </button>
                 </div>
             </div>
         </div>
