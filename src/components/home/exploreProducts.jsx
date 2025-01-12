@@ -4,7 +4,7 @@ import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 export default function ExploreProducts() {
     return (
-        <div className="flex flex-row gap-x-16 justify-center items-center w-full">
+        <div className="flex flex-col sm:flex-row sm:gap-x-16 gap-y-8 justify-center items-center w-full">
             <div className="flex flex-col w-60 justify-start items-center ">
                 <Image
                     src="/home_machine.png"

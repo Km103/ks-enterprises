@@ -4,21 +4,36 @@ import { IoIosMail } from 'react-icons/io';
 
 export default function ContactFooter() {
     return (
-        <div className="flex flex-col gap-y-8">
-            <div className="flex px-2">
-                <FaMapMarker />
-                <div className="w-64 text-sm px-4">
-                    Dhuri, Village Manwala, Manwala Road, Dhuri, Sangrur-148024,
+        <div className="flex flex-col gap-y-4 py-4 text-sm">
+            {/* Address */}
+            <div className="flex items-center gap-x-4">
+                <FaMapMarker className="text-base " />
+                <div className="text-sm w-full sm:w-64">
+                    Village Manwala, Manwala Road, Dhuri, Sangrur-148024,
                     Punjab, India
                 </div>
             </div>
-            <div className="flex px-2">
-                <IoCall />
-                <div className="px-4 text-sm">+91**********</div>
+
+            {/* Phone */}
+            <div className="flex flexitems-center gap-x-4">
+                <IoCall className="text-base " />
+
+                <div className="flex flex-col">
+                    <div className="text-sm hover:underline cursor-pointer">
+                        +919082382000
+                    </div>
+                    <div className="text-sm  hover:underline cursor-pointer">
+                        +919082382000
+                    </div>
+                </div>
             </div>
-            <div className="px-2 flex">
-                <IoIosMail className="text-lg" />
-                <div className="px-4 text-sm">info@ksenterprisesdhuri.com</div>
+
+            {/* Email */}
+            <div className="flex items-center gap-x-4">
+                <IoIosMail className="text-base  " />
+                <div className="text-sm  hover:underline cursor-pointer">
+                    info@trufixxy.com
+                </div>
             </div>
         </div>
     );
