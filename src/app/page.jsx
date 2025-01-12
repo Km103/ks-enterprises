@@ -21,7 +21,7 @@ export default function Home() {
                 <ExploreProducts />
             </div>
 
-            <div className="flex px-16 py-24 w-screen">
+            <div className=" hidden sm:block sm:flex px-16 py-24 w-screen">
                 <RequestQuote />
             </div>
         </div>

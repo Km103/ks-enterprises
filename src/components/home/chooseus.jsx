@@ -3,11 +3,11 @@ import Card from './card';
 export default function ChooseUs() {
     return (
         <div className=" px-16 w-screen bg-primary">
-            <div className="pb-16 text-4xl text-black flex  justify-center font-semibold ">
+            <div className="pb-16 text-4xl text-black flex justify-center font-semibold ">
                 Why Choose Us?
             </div>
 
-            <div className="flex lg:flex-row flex-col justify-center items-center space-x-16  z-auto">
+            <div className="flex lg:flex-row flex-col justify-center items-center sm:space-x-16 space-y-4  z-auto">
                 <Card
                     logo="/Durability.svg"
                     description="Our stretch films are built strong and resilient to keep your goods secure during transport."
