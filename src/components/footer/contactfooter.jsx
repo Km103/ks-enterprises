@@ -20,10 +20,10 @@ export default function ContactFooter() {
 
                 <div className="flex flex-col">
                     <div className="text-sm hover:underline cursor-pointer">
-                        +919082382000
+                        +91 90823-82000
                     </div>
                     <div className="text-sm  hover:underline cursor-pointer">
-                        +919082382000
+                        +91 98774-83337
                     </div>
                 </div>
             </div>
