@@ -28,7 +28,7 @@ export default function ContactUs() {
     };
 
     // Handle form submission with validation
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         // Validate required fields
         if (!formData.name || !formData.email || !formData.message) {
             setStatus({
@@ -40,23 +40,38 @@ export default function ContactUs() {
             return;
         }
 
-        // Show loading state here in real app
+        // Show loading state
         setStatus({
             submitted: false,
             error: false,
             message: 'Sending your message...'
         });
 
-        // Simulate API call
-        setTimeout(() => {
-            console.log('Form Data:', formData);
-            // In a real app, send data to API route
+        try {
+            // Send data to API route
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            // Check if response is OK
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Something went wrong!');
+            }
+
+            const data = await response.json();
 
             // Success message
             setStatus({
                 submitted: true,
                 error: false,
-                message: "Thank you for your message! We'll be in touch soon."
+                message:
+                    data.message ||
+                    "Thank you for your message! We'll be in touch soon."
             });
 
             // Reset form after submission
@@ -66,7 +81,18 @@ export default function ContactUs() {
                 mobile: '',
                 message: ''
             });
-        }, 1000);
+        } catch (error) {
+            console.error('Error submitting form:', error);
+
+            // Error message
+            setStatus({
+                submitted: false,
+                error: true,
+                message:
+                    error.message ||
+                    'Failed to send your message. Please try again.'
+            });
+        }
     };
 
     return (
