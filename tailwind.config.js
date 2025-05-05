@@ -13,10 +13,10 @@ module.exports = {
                 },
                 primary: '#f6f6f6',
                 black: '#000511'
-            },
-            backgroundImage: {
-                heroSection: "url('./public/bg.png')"
             }
+            // backgroundImage: {
+            //     heroSection: "url('./public/bg.png')"
+            // }
         }
     },
     plugins: []
