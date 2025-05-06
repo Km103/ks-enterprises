@@ -1,6 +1,8 @@
 // app/api/contact/route.js
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.resend_key);
 
 export async function POST(request) {
     try {
@@ -17,17 +19,6 @@ export async function POST(request) {
                 { status: 400 }
             );
         }
-
-        // Configure nodemailer transporter
-        const transporter = nodemailer.createTransport({
-            host: 'smtp-relay.brevo.com',
-            port: 587,
-            secure: false,
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_APP_PASSWORD // Use an app password if using Gmail
-            }
-        });
 
         // Email content
         const mailOptions = {
@@ -46,7 +37,8 @@ export async function POST(request) {
         };
 
         // Send email
-        await transporter.sendMail(mailOptions);
+        const response = await resend.emails.send(mailOptions);
+        console.log(response);
 
         // Return success response
         return NextResponse.json(
