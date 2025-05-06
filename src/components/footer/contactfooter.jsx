@@ -32,7 +32,7 @@ export default function ContactFooter() {
             <div className="flex items-center gap-x-4">
                 <IoIosMail className="text-base  " />
                 <div className="text-sm  hover:underline cursor-pointer">
-                    info@trufixxy.com
+                    ksenterprisesdhuri@gmail.com
                 </div>
             </div>
         </div>

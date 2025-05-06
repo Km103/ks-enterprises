@@ -31,7 +31,7 @@ export default function Menu() {
                 <FlyoutMenu />
             </div>
             <Link
-                href="/about"
+                href="/about-us"
                 className={` px-4 ${
                     pathname === '/about'
                         ? 'text-black'
